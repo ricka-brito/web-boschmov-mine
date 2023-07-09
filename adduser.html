@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style2.css">
+    <title>Add user</title>
+</head>
+
+<body>
+
+    <header></header>
+
+    <div class="menu">
+        <a href="menu.html"><img src="images/icons_for_menu/icons_active/home.png" title="home"></a>
+        <a href="itineraries.html"><img src="images/icons_for_menu/icons/directions_bus.png" title="bus"></a>
+        <a href="map.html"><img src="images/icons_for_menu/icons/map.png" title="map"></a>
+        <a href="historic.html"><img src="images/icons_for_menu/icons/history.png" title="historic"></a>
+        <a href="more.html"><img src="images/icons_for_menu/icons/more_horiz.png" title="more"></a>
+    </div>
+    <div class="content">
+        <section class="content-child">
+            <img src="images/logo.png" id="logo-for-mobile" title="logo">
+            <p class="subtitle">Welcome to the BOSCH employee bus fleet website!</p>
+        </section>
+    </div>
+
+    <main>
+        <div class="container-login">
+            <form action="">
+            
+                <div class="textfield">
+                    <label for="user-name">User name</label>
+                    <input type="text" id="user-name" name="user" placeholder="Robert Bosch" title="Please, enter with your user">
+                </div>
+                
+                <div class="textfield">
+                    <label for="user-edv">User EDV</label>
+                    <input type="number" id="user-edv" name="password" placeholder="00000000" title="please, enter with your password">
+                </div>
+
+                <div class="textfield">
+                    <label for="user-email">User e-mail</label>
+                    <input type="email" id="user-email" name="password" placeholder="employee@br.bosch.com" title="please, enter with your password">
+                </div>
+
+                <div class="textfield">
+                    <label for="user-bus">User bus line</label>
+                    <input type="text" id="user-bus" name="password" placeholder="A01" title="please, enter with your password">
+                </div>
+
+            </form>
+
+            <!-- this div asks if you forgot your password -->
+            <div class="area-add-user">
+                <a href="login.html" id="btn-new"><button type="submit" class="btn">Add user</button></a>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

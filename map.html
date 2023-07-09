@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta charset="utf-8">
+        <title>Maps</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css">
+        <script async defer
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places,maps,marker&key=AIzaSyBbA7phaK0dMPK4Dw_U-_Z0vfN30vOHhh8&callback=initMap"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.min.js" integrity="sha512-eHx4nbBTkIr2i0m9SANm/cczPESd0DUEcfl84JpIuutE6oDxPhXvskMR08Wmvmfx5wUpVjlWdi82G5YLvqqJdA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div id="map"></div>
+        <div class="form-group">
+            <a href="menu.html"><button><img src="images/arrow_back.png" width="auto" height="auto" alt="Back"/></button></a>
+            <input type="text" class="form-control" id="search_input" placeholder="Search adress"/>
+            <div class="pop-up">
+                <button id="pop-up-btn"></button>
+                <div class="result">
+                    <div id="bus">
+                        <img src="./images/bus_image.png">
+                        <p id="nmrlinha">A21</p>
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center;">
+                            <i class="fa-solid fa-location-crosshairs fa-2x"></i>
+                            <p id="distance_info"></p>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                        
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbA7phaK0dMPK4Dw_U-_Z0vfN30vOHhh8"></script> -->
+        <script async defer src="/js/script_map.js"></script>
+
+    </body>
+</html>

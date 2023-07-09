@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* declaring color variables */
+:root{
+    --main-color: #FFF;
+    --button-color: #109FCF;
+    --second-color: #EDEDED;
+    --text-color: #1E1E1E;
+    --title-color: #1C1B1F;
+    --hr-color: #D5EDF5 ;
+}
+
+*{
+    font-family: Poppins;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+body{
+    /* margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    font-size: 15px;
+}
+
+header{
+    background-image: url(/images/rainbow.png);
+    background-size: contain;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    position: fixed;
+}
+
+hr{
+    border: var(--hr-color);
+    background: var(--hr-color);
+    border-style: solid;
+    border-width: 1.5px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    width: 100%;
+}
+
+.menu {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80px;
+    position: fixed;
+    top: 40vh;
+
+    border-radius: 0px 15px 15px 0px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 76px;
+
+    color: black;
+    text-decoration: none;
+}
+
+.content-child{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: auto;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.subtitle{
+    color: #1E1E1E;
+    text-align: left;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: auto;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.logo-small{
+    width: 105.746px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.central-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    gap: 20px;
+    width: auto;
+}
+
+
+.principal-content{
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 85vh;
+    margin: auto;
+    padding: 0;
+}
+
+#user-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.user--image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url(/images/perfil.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+.user--name{
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    margin: 5px 0px;
+}
+
+#settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    margin: 5px 0px;
+}
+
+#settings p{
+    align-items: left;
+}
+
+#settings a{
+    color: var(--text-color);
+}
+
+h1{
+    font-size: 20px;
+    color: var(--title-color);
+}
+
+#rights{
+    padding: 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#rights p{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.logo img{
+    margin-top: 15px;
+    width: 183px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 900px) {
+    /* For mobile phones: */
+    .menu, main{
+        width: 100%;
+    }
+
+    .principal-content{
+        background-color: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 72.09%;
+        height: auto;
+        margin-top: 8%;
+    }
+}

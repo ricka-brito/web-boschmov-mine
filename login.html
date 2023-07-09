@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/login2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Login</title>
+</head>
+
+<!-- login page, where the user can enter his predefined user and password -->
+<body>
+    <header></header>
+    <div class="principal-container">
+        <div class="information">
+            <div class="logo-mov"><img id="logo-login" src="images/logo.png" alt="" title="Logo do website BOSCHmov"></div>
+
+            <div id="text-login">
+                <p>Welcome to the BOSCH<br>employee bus fleet website!</p>
+            </div>
+        </div>
+
+        <div class="container-login">
+            <form action="">
+            
+                <div class="textfield">
+                    <label for="user">User</label>
+                    <input type="text" id="user" name="user" placeholder="Enter with your EDV" title="Please, enter with your user">
+                </div>
+                
+                <div class="textfield">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter with your password" title="please, enter with your password">
+                    <i class="bi bi-eye-fill" id="btn-senha" onclick="mostrarSenha()"></i>
+                </div>
+
+            </form>
+
+            <!-- this div asks if you forgot your password -->
+            <div id="verification">
+                <p>Forgot password?</p>
+            </div>
+ 
+            <div class="login-button">
+                <a onclick="login()"><button id="login-homepage">LOGIN</button></a>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/login.js"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style2.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <title>add route</title>
+</head>
+
+<body>
+
+    <header>
+    </header>
+
+    <div class="menu">
+        <a href="menu.html"><img src="images/icons_for_menu/icons_active/home.png" title="home"></a>
+        <a href="itineraries.html"><img src="images/icons_for_menu/icons/directions_bus.png" title="bus"></a>
+        <a href="map.html"><img src="images/icons_for_menu/icons/map.png" title="map"></a>
+        <a href="historic.html"><img src="images/icons_for_menu/icons/history.png" title="historic"></a>
+        <a href="more.html"><img src="images/icons_for_menu/icons/more_horiz.png" title="more"></a>
+    </div>
+    <div class="content">
+        <section class="content-child">
+            <img src="images/logo.png" id="logo-for-mobile" title="logo">
+            <p class="subtitle">Welcome to the BOSCH employee bus fleet website!</p>
+        </section>
+    </div>
+    
+    <main>
+        <div class="">
+            <form action="">
+                <div class="textfield">
+                    <label for="route-name">Route name</label>
+                    <input type="text" id="route-name" name="route-name" placeholder="Campinas" title="Please, enter with your user">
+                </div>
+                
+                <div class="textfield">
+                    <label for="route-number">Route number</label>
+                    <input type="text" id="route-number" name="route-number" placeholder="A04" title="please, enter with your password">
+                </div>
+
+                <div class="dropdown">
+                    <label for="work-shift">Work shift</label>
+                    <div class="select-btn">
+                        <span class="sBtn-text">Select</span>
+                        <i class='bx bxs-chevron-down'></i>
+                    </div>
+
+                    <ul class="options">
+
+                        <li class="option">
+                            <p class="option-text">1st shift</p>
+                        </li>
+
+                        <li class="option">
+                            <p class="option-text">2nd shift</p>
+                        </li>
+
+                        <li class="option">
+                            <p class="option-text">Normal</p>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </form>
+ 
+            <div id="add-button">
+                <a href=""><button id="route-button">Add route</button></a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="/js/dropdown.js"></script>
+
+</body>
+</html>
