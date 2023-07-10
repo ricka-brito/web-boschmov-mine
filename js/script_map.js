@@ -12,16 +12,26 @@ $(document).ready(function(){
     map.setZoom(16)
 
     
-    const options = {
+    const optionsPOST = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': JSON.parse(getCookie('token')).token_type + " " + JSON.parse(getCookie('token')).access_token
+            'Authorization': JSON.parse(getCookie('token')).token_type + " " + JSON.parse(getCookie('token')).access_token,
+            'Access-Control-Allow-Origin':'*'
+        },
+    };
+
+    const optionsGET = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': JSON.parse(getCookie('token')).token_type + " " + JSON.parse(getCookie('token')).access_token,
+            'Access-Control-Allow-Origin':'*'
         },
     };
 
 
-    let response = await fetch(`https://boschmov.azurewebsites.net/adresses/closest?initial_adress=${encodeURIComponent(near_place.formatted_address)}`, options)
+    let response = await fetch(`https://boschmov.azurewebsites.net/adresses/closest?initial_adress=${encodeURIComponent(near_place.formatted_address)}`, optionsPOST)
     .then(response => response.json())
     .then(data => {
         // Process the data returned by the API
@@ -32,6 +42,7 @@ $(document).ready(function(){
         // Handle any errors that occur during the API call
         console.error('Error:', error);
     });
+    
 
     let querySty = response.Adress.street + " " + response.Adress.houseNumber + " " + response.Adress.neighborhood + " " + response.Adress.city + " SP " + response.Adress.cep
 
@@ -43,15 +54,16 @@ $(document).ready(function(){
         title: querySty,
       });
 
+
     map.setCenter(geoloc.results[0].geometry.location);
     map.setZoom(16)
 
     var contentString = '<div id="content">' +
     '<div id="siteNotice">' +
     '</div>' +
-    '<h4 id="firstHeading" class="firstHeading">Parada: </h4>' +
+    `<h4 id="firstHeading" class="firstHeading">Hour: ${response.Adress.busstops[0].time}</h4>` +
     '<div id="bodyContent">' +
-    '<p><b>desciçãotitulo:</b> descrição1 ' +
+    `<p><b>adress: </b> ${geoloc.results[0].formatted_address} ` +
     '</div>' +
     `<a href="https://www.google.com.br/maps/place/${geoloc.results[0].formatted_address}">open on maps</a>`
     '</div>';
@@ -61,8 +73,23 @@ $(document).ready(function(){
     });
     infowindow.open(map, marker);
 
-    infosPopUP(response.distance)
+    let line = await fetch(`https://boschmov.azurewebsites.net/closest/lines/?initial_adress=${encodeURIComponent(near_place.formatted_address)}`, optionsGET)
+    .then(response => response.json())
+    .then(data => {
+        // Process the data returned by the API
+        return data
+        // Use the data as needed
+    })
+    .catch(error => {
+        // Handle any errors that occur during the API call
+        console.error('Error:', error);
     });
+
+
+
+    infosPopUP(response.distance, line, response.Adress.busstops[0].time, geoloc.results[0].formatted_address)
+    });
+
 
 
 
@@ -95,15 +122,21 @@ function getCookie(name) {
   }
 
 
-function infosPopUP(distance){
+
+
+function infosPopUP(distance, lineNumber, hour, adress){
     let popup = $(".pop-up")
     let bus = $(".result")
+    let line = $("#nmrlinha")
+    let hourInfo = document.getElementById("hour_info")
     let distance_info = document.getElementById("distance_info")
+    let str_hour = "take the bus at <b>" + hour + "</b> at the adress: <b>" + adress + "</b>"
 
     popup.addClass("found")
     bus.css("display", "flex")
     distance_info.innerHTML = `<b>distance from your adress:</b> ${distance/1000}km`
-    
+    line.text(lineNumber)
+    hourInfo.innerHTML = str_hour
 
 }
             

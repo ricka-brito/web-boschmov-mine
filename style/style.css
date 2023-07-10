@@ -516,12 +516,15 @@ html, body {
     border-radius: 20px;
 }
 
-#map div[role="dialog"] button[title="Close"] {
-    right: 10px !important;
-    top: 10px !important;
-}
 
 #distance_info{
+    margin-left: 5%;
+    font-family: 'Poppins', sans-serif;
+    color: #1C1B1F;
+    font-size: 16px;
+}
+
+#hour_info{
     margin-left: 5%;
     font-family: 'Poppins', sans-serif;
     color: #1C1B1F;
